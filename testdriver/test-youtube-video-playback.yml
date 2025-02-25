@@ -1,0 +1,30 @@
+version: 4.2.12
+session: 67bd78c3e335a37c356519ab
+steps:
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Search for a video using the search bar.
+    commands:
+      - command: hover-text
+        text: Search
+        description: search bar on YouTube
+        action: click
+      - command: type
+        text: funny cat videos
+  - prompt: Click on the first video in the search results.
+    commands:
+      - command: press-keys
+        keys:
+          - enter
+      - command: wait
+        timeout: 3000
+      - command: hover-text
+        text: funny cat videos
+        description: first video title in the search results
+        action: click
+  - prompt: Click on the first video in the search results.
+    commands:
+      - command: hover-text
+        text: Please... Don’t Shoot 😂 Funny Cats Videos | Kitty Vines
+        description: first video title in the search results
+        action: click
