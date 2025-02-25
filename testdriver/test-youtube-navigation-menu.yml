@@ -1,0 +1,23 @@
+version: 4.2.12
+session: 67bd78c0e335a37c356519a9
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on "Trending" in the left navigation menu.
+    commands:
+      - command: hover-text
+        text: Trending
+        description: trending in the left navigation menu
+        action: click
+  - prompt: Assert that the "Trending" page loads successfully.
+    commands:
+      - command: assert
+        expect: the "Trending" header is visible on the page
+  - prompt: >-
+      Assert that no errors are displayed on the page.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: no errors are displayed on the page
