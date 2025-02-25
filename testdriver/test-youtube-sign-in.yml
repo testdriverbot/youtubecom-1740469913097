@@ -1,0 +1,29 @@
+version: 4.2.12
+session: 67bd78bee335a37c356519a7
+steps:
+  - prompt: Focus the browser window.
+    commands: []
+  - prompt: Click the "Sign In" button.
+    commands:
+      - command: hover-text
+        text: Sign in
+        description: sign in button on the YouTube page
+        action: click
+  - prompt: Assert that the login page appears.
+    commands:
+      - command: assert
+        expect: the login page with "Sign in" text is visible
+  - prompt: Enter test credentials.
+    commands:
+      - command: hover-text
+        text: Email or phone
+        description: email input field on the sign-in page
+        action: click
+      - command: type
+        text: testuser@example.com
+  - prompt: Click the "Next" button.
+    commands:
+      - command: hover-text
+        text: Next
+        description: next button on the sign-in page
+        action: click
