@@ -1,0 +1,36 @@
+version: 4.2.12
+session: 67bd78b98dfb545182f1811a
+steps:
+  - prompt: Focus the browser window.
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: Click on the "Search" bar.
+    commands:
+      - command: hover-text
+        text: Search
+        description: search bar in the YouTube header
+        action: click
+  - prompt: Type "Funny cat videos" into the search bar.
+    commands:
+      - command: hover-text
+        text: Search
+        description: search bar in the YouTube header
+        action: click
+      - command: type
+        text: Funny cat videos
+  - prompt: Press the "Enter" key.
+    commands:
+      - command: press-keys
+        keys:
+          - enter
+  - prompt: Assert that the search results page is displayed.
+    commands:
+      - command: assert
+        expect: search results for "Funny cat videos" are displayed
+  - prompt: >-
+      Assert that results are relevant to the query.  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: the search results include videos related to "Funny cat videos"
